@@ -95,11 +95,11 @@ class STMBus(object):
                 text += 'Realtime:  {0} minutes'.format(entry['time'])
             else:
                 text += 'Scheduled: {0} hour {1} minutes'.format(entry['time'][:2], entry['time'][2:])
-                if humanize:
-                    hour = int(entry['time'][:2])
-                    minute = int(entry['time'][2:])
-                    then = self.futureHourMinToDatetime(hour, minute)
-                    text += ' ({0})'.format(humanize.naturaltime(then))
+                #if humanize:
+                    #hour = int(entry['time'][:2])
+                    #minute = int(entry['time'][2:])
+                    #then = self.futureHourMinToDatetime(hour, minute)
+                    #text += ' ({0})'.format(humanize.naturaltime(then))
 
             if entry['is_cancelled']:
                 text += ' but is CANCELLED! :('
@@ -108,7 +108,7 @@ class STMBus(object):
                 text += ' (but there is congestion!)'
 
             if entry['is_at_stop']:
-                text += ' and IT IS AT THE STOP! (GO GO GO!!)'
+                text += ' and it IS AT THE STOP! (GO GO GO!!)'
 
             if text:
                 return text
